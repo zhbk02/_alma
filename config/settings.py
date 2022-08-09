@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'comments',
     'rest_framework_simplejwt',
     'drf_yasg',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
