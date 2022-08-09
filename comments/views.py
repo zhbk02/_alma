@@ -14,6 +14,7 @@ class CommentViewSet(mixins.CreateModelMixin,
     serializer_class = CommentSerializer
     permission_classes = [IsAuthenticated, IsAuthor]
 
+
     def get_serializer_context(self):
         context = super().get_serializer_context()
         context["request"] = self.request
