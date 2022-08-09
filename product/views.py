@@ -10,7 +10,7 @@ from .serializer import ProductSerializer, CategorySerializer
 class ProductViewSet(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-
+    permission_classes = [IsAuthenticatedOrReadOnly]
 
     def get_serializer_context(self):
         context = super().get_serializer_context()
@@ -27,4 +27,4 @@ class CategoryViewSet(mixins.CreateModelMixin,
 
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-
+    permission_classes = [IsAuthenticatedOrReadOnly]

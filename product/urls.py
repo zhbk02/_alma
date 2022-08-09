@@ -3,9 +3,10 @@ from django.urls import path, include
 from .views import ProductViewSet, CategoryViewSet
 
 router = DefaultRouter()
-router.register('', ProductViewSet)
+router.register('product', ProductViewSet)
 router.register('category', CategoryViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+
 ]
