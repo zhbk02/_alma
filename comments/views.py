@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from rest_framework import mixins
 from rest_framework.viewsets import GenericViewSet
-from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
-from .models import Product, Category, Comment
-from .serializers import ProductSerializer, CategorySerializer, CommentSerializer
+from rest_framework.permissions import IsAuthenticated
+from .permissions import IsAuthor
+from .models import Comment
+from .serializers import CommentSerializer
 
 class CommentViewSet(mixins.CreateModelMixin,
                     mixins.UpdateModelMixin,
